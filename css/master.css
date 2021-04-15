@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Marvin Visions Variable';
+  src: url(fonts/MarvinVisionsTrial-Variable.woff2) format("woff2"),
+    url(fonts/MarvinVisionsTrial-Variable.woff) format("woff"),
+    url(fonts/MarvinVisionsTrial-Variable.ttf) format("truetype");
+  font-weight: 20 170;
+}
+
+body {
+  background: #f9f9f9;
+  font-family: 'Marvin Visions Variable';
+}
+
+h1 {
+  font-size: 0.1em;
+  font-weight: 170;
+  text-align: center;
+  animation-name : typochanges;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes typochanges {
+  0% {
+  font-size: 1em;
+  font-variation-settings: 'opsz' 100, 'wght' 20;
+  }
+  5% {
+  font-size: 2em;
+  font-variation-settings: 'opsz' 100, 'wght' 80;
+  }
+  10% {
+  font-size: 3em;
+  font-variation-settings: 'opsz' 100, 'wght' 120;
+  }
+  15% {
+  font-size: 4em;
+  font-variation-settings: 'opsz' 100, 'wght' 180;
+  }
+  20% {
+  font-size: 5em;
+  font-variation-settings: 'opsz' 100, 'wght' 20;
+  }
+  25% {
+  font-size: 6em;
+  font-variation-settings: 'opsz' 100, 'wght' 80;
+  }
+  30% {
+  font-size: 7em;
+  font-variation-settings: 'opsz' 100, 'wght' 120;
+  }
+  35% {
+  font-size: 8em;
+  font-variation-settings: 'opsz' 100, 'wght' 180;
+  }
+  40% {
+  font-size: 9em;
+  font-variation-settings: 'opsz' 100, 'wght' 80;
+  }
+  45% {
+  font-size: 10em;
+  font-variation-settings: 'opsz' 100, 'wght' 120;
+  }
+  55% {
+  font-size: 10em;
+  font-variation-settings: 'opsz' 100, 'wght' 20;
+  }
+  65% {
+  font-size: 10em;
+  font-variation-settings: 'opsz' 100, 'wght' 60;
+  }
+  75% {
+  font-size: 10em;
+  font-variation-settings: 'opsz' 100, 'wght' 100;
+  }
+  85% {
+  font-size: 10em;
+  font-variation-settings: 'opsz' 100, 'wght' 140;
+  }
+  95% {
+  font-size: 10em;
+  font-variation-settings: 'opsz' 20, 'wght' 180;
+  }
+  100% {
+  font-size: 10em;
+  font-variation-settings: 'opsz' 100, 'wght' 180;
+  }
+}
