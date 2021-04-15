@@ -1,89 +1,87 @@
-@font-face {
-  font-family: 'Marvin Visions Variable';
-  src: url(fonts/MarvinVisionsTrial-Variable.woff2) format("woff2"),
-    url(fonts/MarvinVisionsTrial-Variable.woff) format("woff"),
-    url(fonts/MarvinVisionsTrial-Variable.ttf) format("truetype");
-  font-weight: 20 170;
-}
-
 body {
   background: #f9f9f9;
-  font-family: 'Marvin Visions Variable';
+  font-family: sans-serif;
 }
 
 h1 {
-  font-size: 0.1em;
-  font-weight: 170;
-  text-align: center;
-  animation-name : typochanges;
+  position: fixed;
+  top : 1em;
+/*  animation-name : typochanges;
   animation-duration: 6s;
   animation-iteration-count: infinite;
+*/}
+
+p {
+  margin-bottom: 2em;
+}
+
+/* ### ___________________________________________________________ ### */
+/* ### Download Chromium Beta https://www.google.com/chrome/beta/  ### */
+/* ###  with the #experimental-web-platform-features flag enabled  ### */
+/* ### through chrome://flags.                                     ### */
+/* ### ___________________________________________________________ ### */
+
+/* ### EXAMPLE 01 The progress bar ### */
+/* ### FOUR STEPS ### */
+/*
+ 1 - Define element
+ 2 - Define Keyframes
+ 3 - Define a ScrollTimeline
+ 4 - Attach the Animation + set the ScrollTimeline as the driver for the Animation
+ */
+
+/* (1) Define element */
+#progress {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 2vh;
+	transform-origin: 0 50%;
+	transform: scaleX(0);
+	background: red;
+}
+
+/* (2) Define Keyframes */
+@keyframes adjust-progressbar {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* (3) Define a ScrollTimeline */
+@scroll-timeline progressbar-timeline {
+    time-range: 1s;
+}
+
+/* (4) Attach the Animation + set the ScrollTimeline as the driver for the Animation */
+#progress {
+    animation: 1s linear forwards adjust-progressbar;
+    animation-timeline: progressbar-timeline; /* 👈 THIS! */
 }
 
 
-@keyframes typochanges {
-  0% {
-  font-size: 1em;
-  font-variation-settings: 'opsz' 100, 'wght' 20;
-  }
-  5% {
-  font-size: 2em;
-  font-variation-settings: 'opsz' 100, 'wght' 80;
-  }
-  10% {
-  font-size: 3em;
-  font-variation-settings: 'opsz' 100, 'wght' 120;
-  }
-  15% {
-  font-size: 4em;
-  font-variation-settings: 'opsz' 100, 'wght' 180;
-  }
-  20% {
-  font-size: 5em;
-  font-variation-settings: 'opsz' 100, 'wght' 20;
-  }
-  25% {
-  font-size: 6em;
-  font-variation-settings: 'opsz' 100, 'wght' 80;
-  }
-  30% {
-  font-size: 7em;
-  font-variation-settings: 'opsz' 100, 'wght' 120;
-  }
-  35% {
-  font-size: 8em;
-  font-variation-settings: 'opsz' 100, 'wght' 180;
-  }
-  40% {
-  font-size: 9em;
-  font-variation-settings: 'opsz' 100, 'wght' 80;
-  }
-  45% {
-  font-size: 10em;
-  font-variation-settings: 'opsz' 100, 'wght' 120;
-  }
-  55% {
-  font-size: 10em;
-  font-variation-settings: 'opsz' 100, 'wght' 20;
-  }
-  65% {
-  font-size: 10em;
-  font-variation-settings: 'opsz' 100, 'wght' 60;
-  }
-  75% {
-  font-size: 10em;
-  font-variation-settings: 'opsz' 100, 'wght' 100;
-  }
-  85% {
-  font-size: 10em;
-  font-variation-settings: 'opsz' 100, 'wght' 140;
-  }
-  95% {
-  font-size: 10em;
-  font-variation-settings: 'opsz' 20, 'wght' 180;
-  }
-  100% {
-  font-size: 10em;
-  font-variation-settings: 'opsz' 100, 'wght' 180;
-  }
+
+.chapter {
+  max-width: 48em;
+  margin: auto;
+}
+
+/* (1) Define Keyframes */
+
+/*--> See animations.css */
+
+/* (2) Define a ScrollTimeline */
+@scroll-timeline heading-timeline {
+    time-range: 1s;
+}
+
+/* (3) Attach the Animation + set the ScrollTimeline as the driver for the Animation */
+h1 {
+    animation: 1s linear forwards adjust-heading-size;
+    animation-timeline: progressbar-timeline; /* 👈 THIS! */
 }
